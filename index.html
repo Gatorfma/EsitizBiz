@@ -10,122 +10,472 @@
         body {
             font-family: 'Quicksand', sans-serif;
             margin: 0;
-            background: linear-gradient(to bottom right, #fff5f5, #ffe6e6);
+            background-color: #fff8f4;
             color: #333;
-            line-height: 1.6;
         }
 
-        header {
-            background: #880e4f;
+        nav {
+            background-color: #880e4f;
+            padding: 1rem;
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
             color: white;
-            padding: 2rem 1rem;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            font-weight: 600;
         }
 
-        main {
-            max-width: 960px;
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .content {
+            max-width: 900px;
             margin: 2rem auto;
-            padding: 1rem 2rem;
+            padding: 1rem;
             background: white;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
+        .story-section {
+            background-color: #fff8f4;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            border-left: 4px solid #880e4f;
+        }
+
+        .story-section p {
+            margin: 0.5rem 0;
+        }
+
+        .story-section ul {
+            margin-top: 0.5rem;
+        }
+
         section {
-            margin-bottom: 3rem;
+            display: none;
         }
 
-        h1 {
-            color: #fff176;
+        section.active {
+            display: block;
         }
 
-        h2,
-        h3 {
-            color: #c62828;
-        }
-
+        h1,
         h2 {
-            border-bottom: 2px solid #ffcdd2;
-            padding-bottom: 0.5rem;
+            text-align: center;
+            color: #b71c1c;
         }
 
         ul {
-            padding-left: 1.5rem;
-        }
-
-        li {
-            margin-bottom: 0.5rem;
-        }
-
-        footer {
-            background: #fbe9e7;
-            text-align: center;
-            padding: 1rem;
-            font-size: 0.9rem;
-            color: #777;
+            padding-left: 1.2rem;
         }
 
         p,
         li {
-            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .activity-section {
+            background-color: #fff8f4;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            border-left: 4px solid #880e4f;
+        }
+
+        .activity-section h4 {
+            color: #880e4f;
+            margin-top: 0;
+        }
+
+        .activity-section ul {
+            margin-top: 0.5rem;
+        }
+
+        .activity-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        blockquote {
+            background-color: #f5f5f5;
+            border-left: 4px solid #880e4f;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-style: italic;
+            color: #333;
+        }
+
+        blockquote br {
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background-color: #880e4f;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .footer-content p {
+            margin: 0.5rem 0;
+        }
+
+        .footer-content a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-content a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 
 <body>
-    <header>
-        <h1>Benim Yolum, Benim Seçimim</h1>
-        <p>Toplumsal Rollerin Eşitliği İçin Atölye Uygulaması</p>
-    </header>
-    <main>
-        <section>
-            <h2>Etkinlik Bilgileri</h2>
-            <ul>
-                <li><strong>Hazırlayan:</strong> Sibel Aksakal</li>
-                <li><strong>Yaş Grubu:</strong> 8-11 yaş (3, 4, 5. sınıflar)</li>
-                <li><strong>Süre:</strong> Toplam 2 saat 10 dakika</li>
-                <li><strong>Katılımcı Sayısı:</strong> 15-20 kişi</li>
-            </ul>
-        </section>
+    <nav>
+        <a href="#" onclick="showSection('giris')">Giriş</a>
+        <a href="#" onclick="showSection('hazirlik')">Hazırlık Süreci</a>
+        <a href="#" onclick="showSection('isinma')">Isınma</a>
+        <a href="#" onclick="showSection('p4c')">P4C Atölyesi</a>
+        <a href="#" onclick="showSection('drama')">Drama Atölyesi</a>
+        <a href="#" onclick="showSection('yazarlik')">Yazarlık Atölyesi</a>
+    </nav>
 
-        <section>
-            <h2>Amaç ve Kazanımlar</h2>
-            <p>Bu çalışma, çocukların toplumsal rollerin eşitliği hakkında düşünmesini, kalıplaşmış yargıları
-                sorgulamasını ve kendi yollarını özgürce seçebileceklerini fark etmelerini amaçlar.</p>
+    <div class="content">
+        <section id="giris" class="active">
+            <h1>Benim Yolum, Benim Seçimim</h1>
+            <p><strong>Etkinlik Adı:</strong> Benim Yolum, Benim Seçimim!</p>
+            <p><strong>Yapılacak Çalışmalar:</strong> P4C, Yaratıcı Drama, Yaratıcı Yazarlık Atölyesi</p>
+            <p><strong>Hazırlayan:</strong> Sibel Aksakal</p>
+            <p><strong>Konu:</strong> Toplumsal Rollerin Eşitliği</p>
+            <p><strong>Hedef Yaş Grubu:</strong> 8–11 yaş (3, 4, 5. sınıflar)</p>
+            <p><strong>Süre:</strong> Isınma: 10–15 dk, P4C: 40 dk, Drama: 40 dk, Yazarlık: 40 dk</p>
+            <p><strong>Katılımcı Sayısı:</strong> 15–20 kişi</p>
+            <p><strong>Yöntem ve Teknikler:</strong> Canlandırma, rol yapma, doğaçlama, çocuklar için felsefe, yaratıcı
+                yazma, soru-cevap, etkileşimli okuma</p>
+            <p><strong>Araç ve Gereçler:</strong> Kitap: "Simone De Beauvoir - Kızlar ve Oğlanlar Farklı Mıdır?", kâğıt,
+                kalem, boya kalemi, çember için alan</p>
+            <p><strong>Amaç:</strong> Çocukların toplumsal rollerin eşitliği konusunda farkındalık kazanmaları ve
+                kalıplaşmış yargıları sorgulamaları, kendi yollarını seçmeleri</p>
+            <p><strong>Kazanımlar:</strong></p>
             <ul>
                 <li>Cinsiyet rollerinin sorgulanabilir olduğunu fark eder.</li>
-                <li>Meslek, yaşam biçimi gibi konularda özgür seçim hakkını öğrenir.</li>
-                <li>Farklılıklara saygı göstermeyi öğrenir.</li>
-                <li>Kendi fikirlerini felsefi sorular aracılığıyla ifade eder.</li>
+                <li>Özgürce meslek ve yaşam seçimi yapabileceğini kavrar.</li>
+                <li>Farklılıklara saygı duyar.</li>
+                <li>Felsefi düşünce geliştirir ve gerekçeleriyle ifade eder.</li>
             </ul>
         </section>
 
-        <section>
-            <h2>Atölye Süreci</h2>
-            <h3>1. Isınma: Kim Benim?</h3>
-            <p>Pharrell Williams - "Happy" şarkısıyla başlayan etkileşimli tanışma oyunu.</p>
+        <section id="hazirlik">
+            <h2>P4C Atölyesi Hazırlık Süreci</h2>
+            <h3>1. Fiziksel Ortamın Hazırlanması</h3>
+            <ul>
+                <li>Sınıf veya atölye alanı, dikkat dağıtıcı poster, oyuncak, ekran gibi objelerden arındırılır.</li>
+                <li>Gerekirse masa ve sandalyeler kenara çekilerek geniş ve açık bir alan oluşturulur.</li>
+                <li>Çocukların birbirini görebileceği bir çember düzeni kurulur (yer minderleri, sandalyeler ya da halı
+                    üzerinde oturma).</li>
+                <li>Alanın iyi havalandırıldığından ve uygun ışıktan yararlanıldığından emin olunur.</li>
+            </ul>
 
-            <h3>2. P4C Atölyesi</h3>
-            <p>Hikâye: "Simone De Beauvoir - Kızlar ve Oğlanlar Farklı mıdır?". Tartışma ve düşünme çemberiyle
-                desteklenen felsefi atölye.</p>
+            <h3>2. Materyal Hazırlığı</h3>
+            <ul>
+                <li>Hikâyenin okunacağı metin, görünür büyüklükte yazılmış ya da okunmaya hazır hâlde bulundurulur.</li>
+                <li>Kalem, kâğıt veya etkinlik defteri gibi öğrencilerin not alabileceği araçlar temin edilir.</li>
+            </ul>
 
-            <h3>3. Yaratıcı Drama: Meslek Seçiyorum</h3>
-            <p>Çocuklar, meslekleri canlandırarak empati kurar ve önyargıları kırar.</p>
+            <h3>3. Drama İçin Uygunluk</h3>
+            <ul>
+                <li>Bedensel hareket gerektirebilecek ısınma ve canlandırma etkinlikleri için güvenli bir alan açılır.
+                </li>
+                <li>Drama çalışmaları için rehberlik edecek kısa yönergeler hazırlanır.</li>
+            </ul>
 
-            <h3>4. Yaratıcı Yazarlık: Farklı Bir Dünya</h3>
-            <p>Öğrenciler, özgür seçimlerin mümkün olduğu hayali karakterler yaratır ve hikâye yazar.</p>
+            <h3>4. Katılım ve İletişim Ortamı</h3>
+            <ul>
+                <li>Atölye başlamadan önce, çocuklara "felsefi çember" kuralları açıklanır.</li>
+                <li>İletişimin özenli ve saygılı olması gerektiği vurgulanır.</li>
+                <li>Her bireyin düşüncesinin değerli olduğu, bu nedenle her fikre saygı gösterilmesi gerektiği ifade
+                    edilir.</li>
+                <li>Konuşmaların söz hakkı alınarak sırayla yapılacağı ve herkesin, dikkatle ve göz teması kurarak
+                    dinlenmesi gerektiği belirtilir.</li>
+                <li>Fikirlerin nedenleriyle birlikte ifade edileceği, bir arkadaşımızın fikrine katılıp katılmadığımızı
+                    belirtirken saygılı bir dille nedenini açıklayacağımız anlatılır.</li>
+                <li>Farklı düşüncelere açık olunması gerektiği vurgulanır.</li>
+                <li>Gülme, alay etme ve söz kesme gibi davranışlardan kaçınılması gerektiği hatırlatılır.</li>
+                <li>Çocuklara, düşüncelerini "Ben böyle düşünüyorum çünkü..." ya da "Ben sana katılmıyorum, çünkü..."
+                    gibi ifadelerle paylaşmaları teşvik edilir.</li>
+                <li>Katılımı destekleyen, yargılamadan dinlemeyi ve düşünmeyi ön planda tutan bir ortam oluşturulur.
+                </li>
+            </ul>
         </section>
 
-        <section>
-            <h2>Değerlendirme ve Paylaşım</h2>
-            <p>Her bölüm sonrasında çocuklara sorular sorularak yansıma yapılır. Atölye sonunda hikâyeler bir sınıf
-                kitabı olarak dijitalleştirilir.</p>
+        <section id="isinma">
+            <h2>Isınma Etkinliği</h2>
+            <p><strong>Süre:</strong> 10-15 dakika</p>
+            <p><strong>Etkinlik Adı:</strong> Kim Benim?</p>
+
+            <h3>Amaç</h3>
+            <ul>
+                <li>Öğrencilerin bedensel olarak etkinleşmesini ve grup içinde rahatlamasını sağlamak</li>
+                <li>Toplumsal rollerle ilgili kalıp yargılara dair ilk farkındalığı oluşturmak</li>
+                <li>Eğlenceli bir yolla ifade özgürlüğünü teşvik etmek</li>
+            </ul>
+
+            <h3>Müzik</h3>
+            <p>Etkinlik boyunca arka fonda Pharrell Williams'ın "Happy" adlı şarkısı düşük seste çalınır. Müziğin ritmi,
+                öğrencilerin enerji kazanmasına yardımcı olur. Müzik, özellikle yer değiştirilen anlarda tempoyu
+                destekler ve heyecanı artırır.</p>
+
+            <h3>Uygulama</h3>
+            <ul>
+                <li>Öğrenciler geniş bir alanda, çember şeklinde ayakta durur.</li>
+                <li>Ortada bir kişi (gönüllü bir öğrenci veya öğretmen) durur.</li>
+                <li>Ortadaki kişi bir cümle söyler.</li>
+                <li>Eğer çemberdeki diğer öğrenciler bu hayali paylaşıyorsa, hemen yer değiştirirler.</li>
+                <li>Ortadaki kişi de boş kalan bir yere oturmak için harekete geçer.</li>
+                <li>Ayakta kalan kişi yeni cümleyi kurar.</li>
+            </ul>
+
+            <h3>Örnek Cümleler</h3>
+            <ul>
+                <li>"Ben bir kız olarak pilot olmayı hayal ediyorum."</li>
+                <li>"Ben bir oğlan olarak aşçı olmayı çok isterdim."</li>
+                <li>"Ben futbol oynamayı çok seviyorum."</li>
+                <li>"Ben pembeyi çok seven oğlanım."</li>
+                <li>"Ben oyuncak bebeklerle oynamayı seven bir çocuğum."</li>
+                <li>"Ben büyüyünce tamirci olmak istiyorum."</li>
+                <li>"Ben duygularını açıkça söyleyen bir çocuğum."</li>
+            </ul>
+
+            <h3>Yansıtma Soruları</h3>
+            <ul>
+                <li>"Yer değiştirdiğinizde neler hissettiniz?"</li>
+                <li>"Senin gibi düşünen biriyle karşılaşmak nasıl bir duyguydu?"</li>
+                <li>"Hiç kimseyle aynı hayali paylaşmamak nasıl bir duyguydu?"</li>
+                <li>"Bizi benzer yapan şey neydi? Farklı yapan neydi?"</li>
+            </ul>
         </section>
-    </main>
+
+        <section id="p4c">
+            <h2>P4C Atölyesi</h2>
+            <p><strong>Kavram:</strong> Toplumsal roller ve eşitlik</p>
+            <p><strong>Süre:</strong> 40 dakika</p>
+            <p><strong>Hikâye:</strong> Bir Filozof Bir Soru Simone De Beauvoir Kızlar ve Erkekler Farklı Mıdır?</p>
+
+            <h3>Çember Düzeni ve Kurallar</h3>
+            <p>Artık düşünme çemberine geçme zamanı... Çocuklar, sınıfın uygun bir yerine çember şeklinde yerleştirilir.
+                Herkesin birbirini görebileceği, göz teması kurabileceği bu düzen, birlikte düşünebilmenin ilk adımıdır.
+                Öğretmen artık bir kolaylaştırıcıdır ve çembere dâhil olarak atölye kurallarını çocuklara hatırlatır:
+            </p>
+            <ul>
+                <li>Her düşünce değerlidir.</li>
+                <li>Söz hakkı alarak konuşuyoruz.</li>
+                <li>Birbirimizi dikkatle dinliyoruz.</li>
+                <li>Fikrimize nedenlerini ekliyoruz.</li>
+                <li>Arkadaşımızın fikrine katılıp katılmadığımızı saygıyla ifade ediyoruz.</li>
+            </ul>
+
+            <h3>Hikâye Okuma ve Tartışma</h3>
+            <p>Öğretmen hikâyeyi vurgulu ses tonuyla okur. Hikâye okunurken çocuklarla göz teması kurularak, merak
+                uyandıracak kısa sorularla aralara minik duraklamalar eklenir.</p>
+
+            <h4>Hikâye Bölümleri ve Tartışma Soruları</h4>
+            <div class="story-section">
+                <p>"Kadınlar romantik komedi filmlerini, erkeklerse aksiyon filmlerini severmiş...<br>
+                    Kadınlar ev işlerinde daha becerikliymiş, erkekler de tamir işlerinde...<br>
+                    Kızlar genellikle bebeklerle oynar, oğlanlarsa futbol topuyla…"</p>
+                <p><strong>Tartışma Soruları:</strong></p>
+                <ul>
+                    <li>Bu fikirlere katılıyor musunuz, katılmıyor musunuz? Neden?</li>
+                    <li>Kadınlar ve erkekler birbirinden farklı mıdır? Neden?</li>
+                </ul>
+            </div>
+
+            <div class="story-section">
+                <p>"Simone de Beauvoir'a göre insan dünyaya belli bir amaçla gelmez. Ne olacağımıza, nasıl bir insan
+                    olacağımıza biz karar veririz. Hayatımızdaki seçimleri biz yaptıkça, kendi yolumuzu da biz
+                    belirlemiş oluruz."</p>
+                <p>"Serena Williams dünyaca ünlü bir tenisçi. Çocukluğundan beri yaptığı seçimler düzenli çalışması,
+                    antrenmanlarına önem vermesi, sağlıklı beslenmesi onu bu noktaya getirdi. O, tenisçi olmayı seçti.
+                    Belki de başka bir şeyi seçseydi, bugün bambaşka biri olurdu."</p>
+            </div>
+
+            <div class="story-section">
+                <p>"Bazı insanlar kadınların dünyaya anne olmak için geldiğini söyler. Ama Simone de Beauvoir'a göre bir
+                    kadının anne olup olmayacağına kendisi karar verir. Bir kadın isterse anne olabilir. Ama isterse
+                    aşçı, astronot, mühendis ya da politikacı da olabilir. Hatta isterse hem bir meslek sahibi olur hem
+                    de anne olur."</p>
+                <p><strong>Tartışma Sorusu:</strong></p>
+                <ul>
+                    <li>Meslek seçimi yaparken kadın ya da erkek olmak önemli midir? Yoksa herkes istediği mesleği
+                        seçebilir mi?</li>
+                </ul>
+            </div>
+
+            <div class="story-section">
+                <p>"Erkekler her zaman arabalarla oynamak zorunda değildir. Mavi rengi sevmek ya da spor izlemek onların
+                    doğasında yoktur. Bir erkek pembe rengi de sevebilir, bale yapabilir ya da duygularını gösterebilir.
+                    Bunların hepsi normaldir ve her biri kişinin kendi seçimiyle ilgilidir."</p>
+                <p>"Bir erkek pembe rengi sevebilir, futbol izlemeyebilir, bale yapabilir ya da saçlarını uzatabilir. Bu
+                    seçimlerin hiçbiri diğerinden üstün değildir. Kadınların ve erkeklerin neyi sevip nasıl
+                    davranacağıyla ilgili toplumun bazı fikirleri vardır. Ama bunların çoğu zamanla değişmiştir. Eskiden
+                    mavi kız rengi, pembe erkek rengi sayılırmış. Kim bilir, belki gelecekte baleye erkekler, futbola
+                    ise daha çok kadınlar ilgi duyar."</p>
+            </div>
+
+            <h3>Geçiş Sorusu</h3>
+            <p>Kadın ya da erkek olmak neyi yapıp yapamayacağımızı belirler mi?</p>
+
+            <h3>Felsefi Sorular</h3>
+            <ul>
+                <li>Kadın ya da erkek olarak nasıl bir hayat yaşayacağımıza biz mi karar veririz, yoksa yaşadığımız
+                    çevre mi?</li>
+            </ul>
+
+            <h3>P4C Atölyesi Değerlendirme Soruları</h3>
+            <ol>
+                <li>Atölye senin için nasıl geçti?</li>
+                <li>Çemberde birbirimizi dikkatle dinledik mi?</li>
+                <li>Düşüncen derinleşti mi?</li>
+                <li>Atölye sırasında fikrini değiştirdiğin bir an oldu mu?</li>
+                <li>Halen daha aklında kalan, üzerinde düşündüğün bir konu var mı?</li>
+                <li>Bugün öğrendiğin ya da fark ettiğin bir şey var mı?</li>
+            </ol>
+        </section>
+
+        <section id="drama">
+            <h2>Yaratıcı Drama Atölyesi</h2>
+            <p><strong>Etkinlik Adı:</strong> Meslek Seçiyorum</p>
+            <p><strong>Süre:</strong> 40 dakika</p>
+
+            <h3>Amaç</h3>
+            <ul>
+                <li>Çocukların meslek seçimleri üzerine düşünmeleri</li>
+                <li>Toplumsal kalıplardan sıyrılarak kendilerini özgürce ifade etmeleri</li>
+                <li>Empati becerilerini geliştirmeleri</li>
+            </ul>
+
+            <h3>Uygulama Aşamaları</h3>
+
+            <div class="activity-section">
+                <h4>1. Meslek Heykelleri</h4>
+                <ul>
+                    <li>Öğretmen "Doktor!" ya da "Pilot!" gibi bir meslek söyler.</li>
+                    <li>Çocuklar bu mesleği bir heykel gibi durarak canlandırır.</li>
+                    <li>"Bu mesleğin ne yaptığını biliyor musun?" gibi minik sorularla canlandırmalar kısa sohbetlere
+                        dönüştürülür.</li>
+                    <li>Sıra dışı meslekler de eklenir: Arkeolog, itfaiyeci, sanatçı, astronot, veteriner...</li>
+                </ul>
+            </div>
+
+            <div class="activity-section">
+                <h4>2. Kendi Mesleğim, Kendi Hikâyem</h4>
+                <ul>
+                    <li>Her çocuk birkaç dakika düşünerek hangi mesleği yapmak istediğini belirler.</li>
+                    <li>Ardından sırayla sahneye (çemberin ortasına) çıkar ve: o mesleği hareketlerle ve ses kullanarak
+                        canlandırır (ama mesleği söylemez).</li>
+                    <li>Grup, "Tahmin edebilecek miyiz?" diye heyecanla izler.</li>
+                    <li>Tüm tahminler yapıldıktan sonra meslek açıklanır ve çocuk kısa bir açıklama yapar: "Ben bu
+                        mesleği seçtim çünkü..."</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="yazarlik">
+            <h2>Yaratıcı Yazarlık Atölyesi</h2>
+            <p><strong>Etkinlik Adı:</strong> Farklı Bir Dünya</p>
+            <p><strong>Süre:</strong> 40 dakika</p>
+
+            <h3>Amaç</h3>
+            <p>Öğrencilerin toplumsal kalıp yargılardan arınmış, özgür seçimlerin mümkün olduğu hayali bir dünyayı
+                tasarlayarak yaratıcı yazma becerilerini geliştirmeleri.</p>
+
+            <div class="activity-section">
+                <h4>Hayal Etmeye Başlayalım</h4>
+                <p>Öğretmen çocuklara şöyle seslenir:</p>
+                <blockquote>
+                    "Bu hikâye ile çok düşündük, tartıştık, canlandırdık… Şimdi sizi hayal gücünüzün uçsuz bucaksız bir
+                    yerine götürmek istiyorum:<br>
+                    Toplumsal kalıp yargıların hiç olmadığı, kimsenin 'Sen bunu yapamazsın!' demediği bir dünya hayal
+                    edin. Bu dünyada bir erkek baleye gidebilir, bir kız tamirci olabilir, pembe ve mavi herkes içindir!
+                    Herkes kendi mesleğini, hobisini, yaşam biçimini özgürce seçer. Ama bu dünyanın bir sırrı var:
+                    İsimler yok! İnsanlar sadece yaptıkları şeyle tanınıyor...<br>
+                    'Merhaba, ben Uçan Ressam!' gibi…"
+                </blockquote>
+            </div>
+
+            <div class="activity-section">
+                <h4>Karakter Oluşturma</h4>
+                <p>Öğrenciler bu hayali dünyada yaşayan bir karakter oluştururlar. Karakterin adı yerine mesleği veya
+                    özelliği vardır:</p>
+                <ul>
+                    <li>"Dans Eden Bilimci"</li>
+                    <li>"Mor Saçlı Bahçıvan"</li>
+                    <li>"Balerin Tamirci"</li>
+                    <li>"Gökyüzü Ressamı" gibi.</li>
+                </ul>
+                <p>Yazacakları hikâyede bu karakterin:</p>
+                <ul>
+                    <li>Kim olduğu,</li>
+                    <li>Ne yaptığı,</li>
+                    <li>Ne sevdiği,</li>
+                    <li>Hangi engelleri yaşadığı,</li>
+                    <li>Ve o dünyada hayatın nasıl olduğu anlatılır.</li>
+                </ul>
+            </div>
+
+            <div class="activity-section">
+                <h4>Paylaşım ve Geri Bildirim</h4>
+                <ul>
+                    <li>Süre sonunda isteyen öğrenciler hikâyesini okur.</li>
+                    <li>Önce arkadaşlarından, sonra öğretmenden olumlu odaklı geri bildirim alır:</li>
+                    <ul>
+                        <li>"En çok hangi cümlesini beğendiniz?"</li>
+                        <li>"Size düşündürdüğü şey neydi?"</li>
+                        <li>"Bu karakter gerçekten sizin dünyanızda da yaşasa, ne olurdu?"</li>
+                    </ul>
+                </ul>
+            </div>
+
+            <div class="activity-section">
+                <h4>Sürpriz Dokunuş</h4>
+                <p>Hikâyeler bittikten sonra öğretmen şu teklifi sunar:</p>
+                <blockquote>
+                    "Bu yazıları 'Farklı Bir Dünya' adını taşıyan bir sınıf kitabında birleştirip herkesin okuyabileceği
+                    bir dijital kitap yapalım mı?" (Öneri: Padlet veya storyjumper kullanılabilir)
+                </blockquote>
+            </div>
+        </section>
+    </div>
+
     <footer>
-        &copy; 2025 Benim Yolum, Benim Seçimim Atölyesi - Sibel Aksakal
+        <div class="footer-content">
+            <p><strong>Benim Yolum, Benim Seçimim</strong></p>
+            <p>Toplumsal Rollerin Eşitliği Üzerine Bir Atölye Çalışması</p>
+            <p>Sibel Aksakal</p>
+            <p>©2025 Tüm Hakları Saklıdır</p>
+        </div>
     </footer>
+
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
 </body>
 
 </html>
